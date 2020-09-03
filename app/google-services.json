@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "959026849644",
+    "firebase_url": "https://gagaotalk-8d456.firebaseio.com",
+    "project_id": "gagaotalk-8d456",
+    "storage_bucket": "gagaotalk-8d456.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:959026849644:android:4dcfed138df9468731b549",
+        "android_client_info": {
+          "package_name": "com.example.gagaotalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "959026849644-fm4k88mu3ndcsgcm8jpkfkted0hbc0j8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_u78ZhpY94c_dmVy_kVvVkwGmey--DUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "959026849644-fm4k88mu3ndcsgcm8jpkfkted0hbc0j8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

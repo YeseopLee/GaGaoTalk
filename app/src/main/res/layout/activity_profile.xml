@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <Button
+        android:id="@+id/btn_close"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_close"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_favorite"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_star_border"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_chat"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="1:1채팅"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_call"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="통화하기"
+        android:gravity="center"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_story"
+        app:layout_constraintStart_toEndOf="@+id/txt_chat" />
+
+    <TextView
+        android:id="@+id/txt_story"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="카카오스토리"
+        android:gravity="center"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_chat"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Button"
+        android:layout_marginLeft="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_chat"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_call"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/txt_call"
+        app:layout_constraintEnd_toStartOf="@+id/btn_story"
+        app:layout_constraintStart_toEndOf="@+id/btn_chat" />
+
+    <Button
+        android:id="@+id/btn_story"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Button"
+        android:layout_marginRight="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_story"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/colorDivision"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/btn_call"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@+id/txt_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_account" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
