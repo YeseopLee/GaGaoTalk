@@ -3,6 +3,7 @@ package com.example.gagaotalk
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -22,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_signin.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
+import kotlin.math.sign
 
 class SigninActivity : AppCompatActivity() {
 
@@ -40,9 +41,6 @@ class SigninActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
 
-        // set shared_pref
-
-
         // google login
         google_sign_in_button.setOnClickListener {
             // First_Step
@@ -50,9 +48,13 @@ class SigninActivity : AppCompatActivity() {
         }
 
         // sign in by email
-        signin_signinbtn.setOnClickListener {
-            attemptLogin()
-        }
+        // 클릭 리스너 정의해서 사용
+        signin_signinbtn.setOnClickListener(object : OnSingleClickListener(){
+            override fun onSingleClick(view: View) {
+                attemptLogin()
+            }
+        })
+
         // sign up by email
         signin_signupbtn.setOnClickListener {
             startActivity(Intent(this,SignupActivity::class.java))
@@ -235,8 +237,8 @@ class SigninActivity : AppCompatActivity() {
 
     fun moveMainPage_(){
         var intent = Intent(applicationContext,MainActivity::class.java)
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
         startActivity(intent)
         finish()
     }

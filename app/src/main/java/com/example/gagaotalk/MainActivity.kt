@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
         bottom_navigation.selectedItemId = R.id.action_home
 
         //사용자 정보 받아오기
-        auth = FirebaseAuth.getInstance()
-        user = auth.currentUser!!
-        Log.e("연결상태 확인",user.email)
+//        auth = FirebaseAuth.getInstance()
+//        user = auth.currentUser!!
+//        Log.e("연결상태 확인",user.email)
         Log.e("연결상태 확인", App.prefs.myEmail)
 
         /*Button Listener*/

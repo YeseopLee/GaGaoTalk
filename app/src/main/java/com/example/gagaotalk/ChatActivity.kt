@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.gagaotalk.Model.App
 import com.example.gagaotalk.Model.ChatDTO
 import com.github.nkzawa.emitter.Emitter
 import com.github.nkzawa.socketio.client.IO
@@ -28,7 +29,7 @@ class ChatActivity : AppCompatActivity() {
 
     private var chatCount: Int = 0
     private var hasConnection: Boolean = false
-    private val SERVER_URL = "http://ec2-3-22-222-178.us-east-2.compute.amazonaws.com:3000"
+    private val SERVER_URL = "http://ec2-18-191-138-44.us-east-2.compute.amazonaws.com:3000"
 
     var chatDTOList : ArrayList<ChatDTO> = arrayListOf()
 
@@ -38,6 +39,7 @@ class ChatActivity : AppCompatActivity() {
 
         username = intent.getStringExtra("username")
         name = intent.getStringExtra("name")
+
 
         chatactivity_roomname.setText(name)
 
@@ -71,7 +73,7 @@ class ChatActivity : AppCompatActivity() {
 
             val userId = JSONObject()
             try {
-                userId.put("username", username+"")
+                userId.put("username", App.prefs.myName+"")
                 userId.put("roomName", "room_example")
                 Log.e("username",username+ " Connected")
 
@@ -98,6 +100,7 @@ class ChatActivity : AppCompatActivity() {
                 return@Runnable
             }
             var username = args[0].toString()
+            Log.e("유저네임 체크",username);
             try {
                 val `object` = JSONObject(username)
                 username = `object`.getString("username")
@@ -150,7 +153,7 @@ class ChatActivity : AppCompatActivity() {
 
         val jsonObject = JSONObject()
         try {
-            jsonObject.put("name", username)
+            jsonObject.put("name", App.prefs.myName)
             jsonObject.put("script", message)
             jsonObject.put("profile_image", "example")
             jsonObject.put("date_time", getTime)

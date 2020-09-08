@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gagaotalk.Model.App
 import com.example.gagaotalk.Model.ChatDTO
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.item_friend.view.*
@@ -61,7 +62,7 @@ class ChatAdapter(val context: Context, val chatDTO : ArrayList<ChatDTO>, val us
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if(chatDTOfilter[position].name == username){
+        return if(chatDTOfilter[position].name == App.prefs.myName){
             0
         } else {
             1
