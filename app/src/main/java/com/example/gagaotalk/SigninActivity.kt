@@ -129,6 +129,7 @@ class SigninActivity : AppCompatActivity() {
                     // 리사이클러뷰 데이터 본인정보 삽입
                     App.friendDTOList.add(FriendDTO(0,App.prefs.myName,"test"))
                     loadFreinds(FriendsDTO(App.prefs.myEmail))
+
                 }
             }
 
@@ -150,7 +151,16 @@ class SigninActivity : AppCompatActivity() {
                 if(result.code==200)
                 {
                     // 이메일을 기준으로 db에서 이름, 상메 불러오기
-                    loadStatus(UserStatusDTO(result.friendList[0]))
+                    var friendName : String
+                    for (friendName in result.friendList){
+                        loadStatus(UserStatusDTO(friendName))
+                        Log.e("친구 목록 갱신",friendName)
+                    }
+
+                    // 로그인
+                    /* 친구목록 완전히 불러오고 로딩되도록 개선해야함
+                    * 한번 불러온 친구목록은 sqlite에 저장 or 매번 불러오기? */
+                    moveMainPage_()
 
                 }
             }
@@ -171,9 +181,8 @@ class SigninActivity : AppCompatActivity() {
                 Log.e("상태 불러오기 확인",result.toString())
                 if(result.code==200)
                 {
-                    // 이메일을 기준으로 db에서 이름, 메세지 받아와야해.
+                    // 이메일을 기준으로 db에서 이름, 메세지 받아오기
                     App.friendDTOList.add(FriendDTO(1,result.userName,result.userMsg))
-                    moveMainPage_()
 
                 }
             }
