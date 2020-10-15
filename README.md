@@ -19,7 +19,7 @@ Retrofit2
 
 ## Back-End
 AWS (EC2서버, RDS 데이터베이스)   
-Node.js(express)   
+Node.js(express) + MySQL   
 REST API   
 
 
