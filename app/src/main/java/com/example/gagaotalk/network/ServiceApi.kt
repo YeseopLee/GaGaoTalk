@@ -19,5 +19,8 @@ interface ServiceApi {
     @POST("/user/loadfriend/setstatus")
     fun loadStatus(@Body data: UserStatusDTO?): Call<UserStatusResponseDTO>?
 
+    @POST("/user/addfriend")
+    fun addFriend(@Body data: AddFriendDTO?): Call<AddFriendResponseDTO>?
+
 
 }

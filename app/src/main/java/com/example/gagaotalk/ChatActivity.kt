@@ -29,7 +29,7 @@ class ChatActivity : AppCompatActivity() {
 
     private var chatCount: Int = 0
     private var hasConnection: Boolean = false
-    private val SERVER_URL = "http://ec2-18-191-138-44.us-east-2.compute.amazonaws.com:3000"
+    private val SERVER_URL = "http://ec2-3-136-155-6.us-east-2.compute.amazonaws.com:3000"
 
     var chatDTOList : ArrayList<ChatDTO> = arrayListOf()
 

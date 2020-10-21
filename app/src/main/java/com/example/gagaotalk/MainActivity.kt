@@ -56,6 +56,10 @@ class MainActivity : AppCompatActivity(),BottomNavigationView.OnNavigationItemSe
             startActivity(Intent(this,SearchActivity::class.java))
         }
 
+        btn_add.setOnClickListener {
+            startActivity(Intent(this,AddFriendActivity::class.java))
+        }
+
 
     }
 

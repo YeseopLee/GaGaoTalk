@@ -11,7 +11,7 @@
 
     <Button
         android:id="@+id/google_sign_in_button"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:background="@drawable/btn_signin_google"
         android:text="@string/signin_google"
@@ -23,7 +23,7 @@
 
     <Button
         android:id="@+id/signin_signupbtn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/signup_email"
         app:layout_constraintBottom_toTopOf="@+id/google_sign_in_button"
@@ -68,7 +68,7 @@
 
     <Button
         android:id="@+id/signin_signinbtn"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/signin_email"
         app:layout_constraintBottom_toTopOf="@+id/signin_signupbtn"
